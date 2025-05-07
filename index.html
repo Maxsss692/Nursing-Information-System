@@ -78,7 +78,7 @@ margin: 0;
 <div class="w-full max-w-md p-8 mx-auto bg-white rounded-lg shadow-lg">
 <div class="flex flex-col items-center mb-8">
     <div class="flex flex-col items-center">
-        <img src="rci.jpg" alt="Hospital Logo" class="w-20 h-20 object-contain mb-4" />
+        <img src="rci.jpg" alt="Hospital Logo" class="w-24 h-24 object-contain mb-4" />
         <h1 class="text-3xl font-semibold text-gray-900 tracking-tight text-center" style="font-family: 'Times New Roman', Times, serif;">
           DR. PABLO O. TORRE MEMORIAL HOSPITAL
         </h1>
@@ -406,7 +406,7 @@ Back
 <button type="button" class="inline-flex items-center px-4 py-2 border border-gray-300 !rounded-button shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary whitespace-nowrap">
 Edit
 </button>
-<button type="submit" class="inline-flex items-center px-4 py-2 border border-transparent !rounded-button shadow-sm text-sm font-medium text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary whitespace-nowrap">
+<button id="saveButton" type="submit" class="inline-flex items-center px-4 py-2 border border-transparent !rounded-button shadow-sm text-sm font-medium text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary whitespace-nowrap">
 Save
 </button>
 </div>
@@ -785,7 +785,7 @@ Back
 </div>
 <div class="flex items-center">
 <span class="text-sm text-gray-500">Current Patient: </span>
-<span class="ml-1 text-sm font-medium text-gray-700">Robert Anderson</span>
+<span class="ml-1 text-sm font-medium text-gray-700">Mark Dela Cruz</span>
 </div>
 </div>
 </div>
@@ -804,16 +804,16 @@ Back
 <select id="testType" class="form-input pr-8 appearance-none">
 <option value="">Select test type</option>
 <option value="cbc">Complete Blood Count (CBC)</option>
-<option value="bmp">Basic Metabolic Panel (BMP)</option>
-<option value="cmp">Comprehensive Metabolic Panel (CMP)</option>
-<option value="lipid">Lipid Panel</option>
-<option value="a1c">Hemoglobin A1C</option>
-<option value="urinalysis">Urinalysis</option>
-<option value="xray">X-Ray</option>
-<option value="ct">CT Scan</option>
-<option value="mri">MRI</option>
+<option value="bmp">Stool Exam</option>
+<option value="cmp">Electrolytes</option>
+<option value="lipid">BUN/Creatinine</option>
+<option value="a1c">Urinalysis </option>
+<option value="urinalysis">C-Reactive Protein (CRP)</option>
+<option value="xray">Liver Function Test (LFT)</option>
+<option value="ct">Serum Osmolality </option>
+<option value="mri">Blood Culture</option>
 <option value="ultrasound">Ultrasound</option>
-<option value="ecg">ECG/EKG</option>
+<option value="ecg">Abdominal Ultrasound </option>
 </select>
 <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
 <i class="ri-arrow-down-s-line"></i>
@@ -847,7 +847,6 @@ Back
 </div>
 </div>
 </div>
-</div>
 <div class="sm:col-span-6">
 <label for="clinicalIndication" class="block text-sm font-medium text-gray-700">Clinical Indication</label>
 <div class="mt-1">
@@ -856,7 +855,7 @@ Back
 </div>
 </div>
 <div class="mt-6 flex justify-end">
-<button type="submit" class="inline-flex items-center px-4 py-2 border border-transparent !rounded-button shadow-sm text-sm font-medium text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary whitespace-nowrap">
+<button id="requestTestButton" type="submit" class="inline-flex items-center px-4 py-2 border border-transparent !rounded-button shadow-sm text-sm font-medium text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary whitespace-nowrap">
 Request Test
 </button>
 </div>
@@ -880,34 +879,22 @@ Request Test
 </thead>
 <tbody class="bg-white divide-y divide-gray-200">
 <tr>
-<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Complete Blood Count</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Stool Exam</td>
 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Apr 25, 2025</td>
-<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Multiple values</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Result Pending</td>
 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Varies</td>
 <td class="px-6 py-4 whitespace-nowrap">
-<span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Completed</span>
+<span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Pending</span>
 </td>
 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
 <button class="text-primary hover:text-primary/80">View</button>
 </td>
 </tr>
 <tr>
-<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Basic Metabolic Panel</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Complete Blood Count (CBC)</td>
 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Apr 25, 2025</td>
-<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Multiple values</td>
-<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Varies</td>
-<td class="px-6 py-4 whitespace-nowrap">
-<span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Completed</span>
-</td>
-<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-<button class="text-primary hover:text-primary/80">View</button>
-</td>
-</tr>
-<tr>
-<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Hemoglobin A1C</td>
-<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Apr 25, 2025</td>
-<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">7.2%</td>
-<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">< 5.7%</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">WBC: (12,500/mm³)</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">WBC: 4,000 – 11,000/mm³</td>
 <td class="px-6 py-4 whitespace-nowrap">
 <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">Abnormal</span>
 </td>
@@ -916,27 +903,27 @@ Request Test
 </td>
 </tr>
 <tr>
-<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Chest X-Ray</td>
-<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Apr 26, 2025</td>
-<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">See report</td>
-<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">N/A</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Electrolytes</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Apr 25, 2025</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Na – 134, K – 3.1, Cl – 96</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Na: 135–145, K: 3.5–5.0, Cl: 98–106</td>
 <td class="px-6 py-4 whitespace-nowrap">
-<span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Completed</span>
+<span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">Abnormal</span>
 </td>
 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
 <button class="text-primary hover:text-primary/80">View</button>
 </td>
 </tr>
 <tr>
-<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Lipid Panel</td>
-<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Apr 27, 2025</td>
-<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Pending</td>
-<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Varies</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">BUN/Creatinine</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Apr 26, 2025</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Slightly elevated (mild dehydration)</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">7–20, Cr: 0.6–1.3</td>
 <td class="px-6 py-4 whitespace-nowrap">
-<span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">Pending</span>
+<span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">Abnormal</span>
 </td>
 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-<button class="text-gray-400 cursor-not-allowed">View</button>
+<button class="text-primary hover:text-primary/80">View</button>
 </td>
 </tr>
 </tbody>
@@ -964,7 +951,7 @@ Back
 </div>
 <div class="flex items-center">
 <span class="text-sm text-gray-500">Current Patient: </span>
-<span class="ml-1 text-sm font-medium text-gray-700">Robert Anderson</span>
+<span class="ml-1 text-sm font-medium text-gray-700">Mark Dela Cruz</span>
 </div>
 </div>
 </div>
@@ -981,6 +968,7 @@ Back
 <div class="relative">
 <select id="dietType" class="form-input pr-8 appearance-none">
 <option value="diabetic">Diabetic Diet</option>
+<option selected>Progressive GI Recovery Diet</option>
 <option value="regular">Regular Diet</option>
 <option value="low-sodium">Low Sodium Diet</option>
 <option value="low-fat">Low Fat Diet</option>
@@ -997,76 +985,86 @@ Back
 </div>
 </div>
 <div>
-<label for="calorieCount" class="block text-sm font-medium text-gray-700">Calorie Count</label>
-<div class="mt-1">
-<input type="number" id="calorieCount" class="form-input" value="1800">
-</div>
-</div>
-<div>
-<label for="fluidRestriction" class="block text-sm font-medium text-gray-700">Fluid Restriction</label>
-<div class="mt-1">
-<div class="flex items-center">
-<div class="flex items-center h-5">
-<input id="fluidRestriction" type="checkbox" class="h-4 w-4 text-primary border-gray-300 rounded">
-</div>
-<div class="ml-3 text-sm">
-<label for="fluidRestriction" class="font-medium text-gray-700">Restrict fluid intake</label>
-</div>
-</div>
-</div>
-</div>
-<div>
-<label for="fluidAmount" class="block text-sm font-medium text-gray-700">Fluid Amount (mL/day)</label>
-<div class="mt-1">
-<input type="number" id="fluidAmount" class="form-input" value="1500">
-</div>
-</div>
-<div>
-<label for="mealFrequency" class="block text-sm font-medium text-gray-700">Meal Frequency</label>
-<div class="mt-1">
-<div class="relative">
-<select id="mealFrequency" class="form-input pr-8 appearance-none">
-<option value="3">3 meals per day</option>
-<option value="5">5 small meals per day</option>
-<option value="6">6 small meals per day</option>
-</select>
-<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-<i class="ri-arrow-down-s-line"></i>
-</div>
-</div>
-</div>
-</div>
-<div>
-<label for="specialInstructions" class="block text-sm font-medium text-gray-700">Special Instructions</label>
-<div class="mt-1">
-<textarea id="specialInstructions" rows="4" class="form-input py-3">- Monitor blood glucose before and after meals
-- Avoid concentrated sweets and sugary beverages
-- Limit carbohydrate intake to 60g per meal
-- Ensure adequate protein intake (at least 20g per meal)
-- Offer sugar-free options for desserts and beverages</textarea>
-</div>
-</div>
-<div>
-<label for="allergies" class="block text-sm font-medium text-gray-700">Food Allergies/Intolerances</label>
-<div class="mt-1">
-<textarea id="allergies" rows="2" class="form-input py-3">Shellfish - Anaphylaxis
-Lactose intolerance - Moderate</textarea>
-</div>
-</div>
-<div>
-<label for="supplements" class="block text-sm font-medium text-gray-700">Nutritional Supplements</label>
-<div class="mt-1">
-<textarea id="supplements" rows="2" class="form-input py-3">Ensure Plus - 1 can with breakfast and dinner
-Multivitamin - 1 tablet daily with breakfast</textarea>
-</div>
-</div>
-</div>
-<div class="mt-6 flex justify-end space-x-3">
-<button type="button" class="back-btn inline-flex items-center px-4 py-2 border border-gray-300 !rounded-button shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary whitespace-nowrap">
-Back
-</button>
-<button type="submit" class="inline-flex items-center px-4 py-2 border border-transparent !rounded-button shadow-sm text-sm font-medium text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary whitespace-nowrap">
-Save
+  <div>
+    <label for="calorieCount" class="block text-sm font-medium text-gray-700">Calorie Count</label>
+    <div class="mt-1">
+      <input type="number" id="calorieCount" class="form-input" placeholder="Progressive intake" value="">
+    </div>
+  </div>
+  
+  <div>
+    <label for="fluidRestriction" class="block text-sm font-medium text-gray-700">Fluid Restriction</label>
+    <div class="mt-1">
+      <div class="flex items-center">
+        <div class="flex items-center h-5">
+          <input id="fluidRestriction" type="checkbox" class="h-4 w-4 text-primary border-gray-300 rounded" checked="false">
+        </div>
+        <div class="ml-3 text-sm">
+          <label for="fluidRestriction" class="font-medium text-gray-700">Restrict fluid intake</label>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div>
+    <label for="fluidAmount" class="block text-sm font-medium text-gray-700">Fluid Amount (mL/day)</label>
+    <div class="mt-1">
+      <input type="number" id="fluidAmount" class="form-input" placeholder="As tolerated" value="">
+    </div>
+  </div>
+  
+  <div>
+    <label for="mealFrequency" class="block text-sm font-medium text-gray-700">Meal Frequency</label>
+    <div class="mt-1">
+      <div class="relative">
+        <select id="mealFrequency" class="form-input pr-8 appearance-none">
+          <option value="">Progressive as tolerated</option>
+          <option value="3">3 meals per day</option>
+          <option value="5">5 small meals per day</option>
+          <option value="6">6 small meals per day</option>
+        </select>
+        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+          <i class="ri-arrow-down-s-line"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div>
+    <label for="specialInstructions" class="block text-sm font-medium text-gray-700">Special Instructions</label>
+    <div class="mt-1">
+      <textarea id="specialInstructions" rows="4" class="form-input py-3">
+  - Initially, NPO for GI rest
+  - Progress to clear liquids after 24 hours without vomiting
+  - Begin BRAT diet (Banana, Rice, Applesauce, Toast) on Day 2
+  - Advance diet as tolerated with clinical improvement
+  - Avoid dairy, spicy, and high-fiber foods initially</textarea>
+    </div>
+  </div>
+  
+  <div>
+    <label for="allergies" class="block text-sm font-medium text-gray-700">Food Allergies/Intolerances</label>
+    <div class="mt-1">
+      <textarea id="allergies" rows="2" class="form-input py-3" placeholder="None reported"></textarea>
+    </div>
+  </div>
+  
+  <div>
+    <label for="supplements" class="block text-sm font-medium text-gray-700">Nutritional Supplements</label>
+    <div class="mt-1">
+      <textarea id="supplements" rows="2" class="form-input py-3">None until oral intake improves</textarea>
+    </div>
+  </div>
+  
+  <div class="mt-6 flex justify-end space-x-3">
+    <button type="button" class="back-btn inline-flex items-center px-4 py-2 border border-gray-300 !rounded-button shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary whitespace-nowrap">
+      Back
+    </button>
+    <button type="submit" class="inline-flex items-center px-4 py-2 border border-transparent !rounded-button shadow-sm text-sm font-medium text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary whitespace-nowrap">
+      Save
+    </button>
+  </div>
+  
 </button>
 </div>
 </form>
@@ -1087,7 +1085,7 @@ Save
 </div>
 <div class="flex items-center">
 <span class="text-sm text-gray-500">Current Patient: </span>
-<span class="ml-1 text-sm font-medium text-gray-700">Robert Anderson</span>
+<span class="ml-1 text-sm font-medium text-gray-700">Mark Dela Cruz</span>
 </div>
 </div>
 </div>
@@ -1146,7 +1144,6 @@ Save
 </div>
 </div>
 </div>
-</div>
 <div class="sm:col-span-6">
 <label for="orderDetails" class="block text-sm font-medium text-gray-700">Order Details</label>
 <div class="mt-1">
@@ -1155,7 +1152,7 @@ Save
 </div>
 </div>
 <div class="mt-6 flex justify-end">
-<button type="submit" class="inline-flex items-center px-4 py-2 border border-transparent !rounded-button shadow-sm text-sm font-medium text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary whitespace-nowrap">
+<button id="addOrderButton" type="submit" class="inline-flex items-center px-4 py-2 border border-transparent !rounded-button shadow-sm text-sm font-medium text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary whitespace-nowrap">
 Add Order
 </button>
 </div>
@@ -1178,63 +1175,67 @@ Add Order
 </thead>
 <tbody class="bg-white divide-y divide-gray-200">
 <tr>
-<td class="px-6 py-4 text-sm font-medium text-gray-900">Acetaminophen 500mg PO q6h PRN for pain</td>
-<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Apr 25, 2025</td>
-<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Dr. James Wilson</td>
-<td class="px-6 py-4 whitespace-nowrap">
-<span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Active</span>
-</td>
-<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-<button class="text-primary hover:text-primary/80 mr-2">Complete</button>
-<button class="text-gray-500 hover:text-gray-700">View</button>
-</td>
-</tr>
-<tr>
-<td class="px-6 py-4 text-sm font-medium text-gray-900">Metformin 500mg PO BID with meals</td>
-<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Apr 25, 2025</td>
-<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Dr. James Wilson</td>
-<td class="px-6 py-4 whitespace-nowrap">
-<span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Active</span>
-</td>
-<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-<button class="text-primary hover:text-primary/80 mr-2">Complete</button>
-<button class="text-gray-500 hover:text-gray-700">View</button>
-</td>
-</tr>
-<tr>
-<td class="px-6 py-4 text-sm font-medium text-gray-900">Vital signs q4h</td>
-<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Apr 25, 2025</td>
-<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Dr. James Wilson</td>
-<td class="px-6 py-4 whitespace-nowrap">
-<span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Active</span>
-</td>
-<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-<button class="text-primary hover:text-primary/80 mr-2">Complete</button>
-<button class="text-gray-500 hover:text-gray-700">View</button>
-</td>
-</tr>
-<tr>
-<td class="px-6 py-4 text-sm font-medium text-gray-900">Physical therapy consult</td>
-<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Apr 25, 2025</td>
-<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Dr. James Wilson</td>
-<td class="px-6 py-4 whitespace-nowrap">
-<span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">Completed</span>
-</td>
-<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-<button class="text-gray-500 hover:text-gray-700">View</button>
-</td>
-</tr>
-<tr>
-<td class="px-6 py-4 text-sm font-medium text-gray-900">Diabetic diet</td>
-<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Apr 25, 2025</td>
-<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Dr. James Wilson</td>
-<td class="px-6 py-4 whitespace-nowrap">
-<span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Active</span>
-</td>
-<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-<button class="text-primary hover:text-primary/80 mr-2">Complete</button>
-<button class="text-gray-500 hover:text-gray-700">View</button>
-</td>
+  <tr>
+    <td class="px-6 py-4 text-sm font-medium text-gray-900">Start IV fluids as above</td>
+    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Apr 25, 2025</td>
+    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Dr. James Wilson</td>
+    <td class="px-6 py-4 whitespace-nowrap">
+      <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Active</span>
+    </td>
+    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+      <button class="text-primary hover:text-primary/80 mr-2">Complete</button>
+      <button class="text-gray-500 hover:text-gray-700">View</button>
+    </td>
+  </tr>
+  <tr>
+    <td class="px-6 py-4 text-sm font-medium text-gray-900">Loperamide 2 mg PO after each loose stool (max 8 mg/day)</td>
+    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Apr 25, 2025</td>
+    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Dr. James Wilson</td>
+    <td class="px-6 py-4 whitespace-nowrap">
+      <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">PRN</span>
+    </td>
+    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+      <button class="text-primary hover:text-primary/80 mr-2">Complete</button>
+      <button class="text-gray-500 hover:text-gray-700">View</button>
+    </td>
+  </tr>
+  <tr>
+    <td class="px-6 py-4 text-sm font-medium text-gray-900">ORS as tolerated</td>
+    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Apr 25, 2025</td>
+    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Dr. James Wilson</td>
+    <td class="px-6 py-4 whitespace-nowrap">
+      <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Active</span>
+    </td>
+    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+      <button class="text-primary hover:text-primary/80 mr-2">Complete</button>
+      <button class="text-gray-500 hover:text-gray-700">View</button>
+    </td>
+  </tr>
+  <tr>
+    <td class="px-6 py-4 text-sm font-medium text-gray-900">Reassess for tolerance to oral diet every 8 hours</td>
+    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Apr 25, 2025</td>
+    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Dr. James Wilson</td>
+    <td class="px-6 py-4 whitespace-nowrap">
+      <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Active</span>
+    </td>
+    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+      <button class="text-primary hover:text-primary/80 mr-2">Complete</button>
+      <button class="text-gray-500 hover:text-gray-700">View</button>
+    </td>
+  </tr>
+  <tr>
+    <td class="px-6 py-4 text-sm font-medium text-gray-900">Discontinue IV fluids when oral intake adequate</td>
+    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Apr 25, 2025</td>
+    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Dr. James Wilson</td>
+    <td class="px-6 py-4 whitespace-nowrap">
+      <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">Conditional</span>
+    </td>
+    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+      <button class="text-primary hover:text-primary/80 mr-2">Complete</button>
+      <button class="text-gray-500 hover:text-gray-700">View</button>
+    </td>
+  </tr>
+  
 </tr>
 </tbody>
 </table>
@@ -1344,6 +1345,21 @@ screen.classList.add('hidden');
 mainMenu.classList.remove('hidden');
 });
 });
+
+// Select specific buttons by their unique IDs or attributes
+const refreshButtons = document.querySelectorAll(
+  'button#saveButton, button#addOrderButton, button#requestTestButton, button#addProcedureButton'
+);
+
+// Add click event listeners to the selected buttons
+refreshButtons.forEach(button => {
+  button.addEventListener('click', function(e) {
+    e.preventDefault(); // Prevent default form submission
+    location.reload(); // Refresh the page
+  });
+});
+
+// Other existing script logic...
 });
 </script>
 </body>

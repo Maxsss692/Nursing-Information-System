@@ -143,55 +143,52 @@ Having trouble logging in? <a href="#" class="text-primary hover:underline">Cont
         <span class="text-sm" id="currentTime"></span>
       </div>
       
-      <script>
-        // Function to update the current time in 12-hour format with AM/PM
-        function updateCurrentTime() {
-          const now = new Date();
-          
-          // Get current hour (0-23)
-          let hours = now.getHours();
-          const minutes = now.getMinutes().toString().padStart(2, '0');
-          const seconds = now.getSeconds().toString().padStart(2, '0');
-          
-          // Determine AM or PM
-          const period = hours >= 12 ? 'PM' : 'AM';
-          
-          // Convert hour to 12-hour format
-          hours = hours % 12;
-          hours = hours ? hours : 12; // Handle 0 as 12 (midnight)
-          
-          // Combine hour, minutes, seconds, and AM/PM into a time string
-          const timeString = `${hours.toString().padStart(2, '0')}:${minutes}:${seconds} ${period}`;
-          
-          // Update the 'currentTime' element with the formatted time
-          document.getElementById('currentTime').textContent = timeString;
-        }
-      
-        // Set the time to update every second (1000 milliseconds)
-        setInterval(updateCurrentTime, 1000);
-      
-        // Initial call to set the time immediately
-        updateCurrentTime();
-      </script>
-      
-      
+     <script>
+  // Function to update the current time in 12-hour format with AM/PM
+  function updateCurrentTime() {
+    const now = new Date();
+    
+    // Get current hour (0-23)
+    let hours = now.getHours();
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const seconds = now.getSeconds().toString().padStart(2, '0');
+    
+    // Determine AM or PM
+    const period = hours >= 12 ? 'PM' : 'AM';
+    
+    // Convert hour to 12-hour format
+    hours = hours % 12;
+    hours = hours ? hours : 12; // Handle 0 as 12 (midnight)
+    
+    // Combine hour, minutes, seconds, and AM/PM into a time string
+    const timeString = `${hours.toString().padStart(2, '0')}:${minutes}:${seconds} ${period}`;
+    
+    // Update the 'currentTime' element with the formatted time
+    document.getElementById('currentTime').textContent = timeString;
+  }
+  
+  // Set the time to update every second (1000 milliseconds)
+  setInterval(updateCurrentTime, 1000);
+  
+  // Initial call to set the time immediately
+  updateCurrentTime();
+</script>
+
 </div>
 <div class="h-6 w-px bg-blue-400"></div>
+<div class="absolute right-0 flex items-center pr-4">
+  <!-- Container for Nurse Name and Time -->
+  <div class="flex items-center">
+    <span class="text-sm text-blue-100">Nurse: </span>
+    <span class="ml-1 text-sm font-medium text-white">Dairo Glacier, RN</span>
+    <span class="ml-2 text-sm font-medium text-white" id="currentTime"></span> <!-- Time placed here -->
+  </div>
+  <div class="w-8 h-8 flex items-center justify-center bg-white/10 rounded-full ml-2">
+    <i class="ri-user-line text-white"></i>
+  </div>
+</div>
+</div>
 <div class="flex items-center">
-<span class="text-sm text-blue-100">Nurse: </span>
-<span class="ml-1 text-sm font-medium text-white">Dairo Glacier, RN</span>
-<div class="w-8 h-8 flex items-center justify-center bg-white/10 rounded-full ml-2">
-<i class="ri-user-line text-white"></i>
-</div>
-</div>
-</div>
-<div class="flex items-center">
-<div class="flex items-center">
-<span class="text-sm text-gray-700 mr-2">Dairo Glacier, RN</span>
-<div class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full">
-<i class="ri-user-line text-primary"></i>
-</div>
-</div>
 </div>
 </div>
 </div>

@@ -193,113 +193,198 @@ Having trouble logging in? <a href="#" class="text-primary hover:underline">Cont
 </div>
 </div>
 </header>
-<main class="max-w-7xl mx-auto py-6 px-4">
-  <h1 class="text-2xl font-semibold text-gray-900 mb-6">Main Menu</h1>
+<section class="mx-auto max-w-7xl px-6 py-10">
+  <h1 class="text-2xl font-semibold mb-6">Main Menu</h1>
 
   <!-- Grid of menu items -->
-  <!-- Grid of menu items -->
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-  <!-- Patient's Data -->
-  <a href="#" class="menu-item" data-screen="patientData">
-    <div class="bg-white shadow rounded-lg hover:shadow-md transition-shadow">
-      <div class="px-4 py-5 sm:p-6">
-        <div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full mb-4">
-          <i class="ri-user-heart-line text-blue-600 text-xl"></i>
-        </div>
-        <h3 class="text-lg font-semibold text-gray-900">Patient's Data</h3>
-        <p class="text-sm text-gray-500">View and manage patient information</p>
+<div class="grid grid-cols-3 gap-6">
+  
+   <!-- 1. Patient's Data -->
+   <a href="#" class="menu-item" data-screen="patientData">
+    <div class="bg-white shadow rounded-lg hover:shadow-md transition-shadow p-6">
+      <div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full mb-4">
+        <i class="ri-user-heart-line text-blue-600 text-xl"></i>
       </div>
+      <h3 class="text-lg font-semibold text-gray-900">Patient's Data</h3>
+      <p class="text-sm text-gray-500">View and manage patient information</p>
     </div>
   </a>
 
-  <!-- History -->
+  <!-- 2. Add Patient -->
+  <a href="#" class="menu-item" data-screen="addPatient">
+    <div class="bg-white shadow rounded-lg hover:shadow-md transition-shadow p-6">
+      <div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full mb-4">
+        <i class="ri-user-add-line text-blue-600 text-xl"></i>
+      </div>
+      <h3 class="text-lg font-semibold text-gray-900">Add Patient</h3>
+      <p class="text-sm text-gray-500">Add new patient information</p>
+    </div>
+  </a>
+
+  <!-- 3. History -->
   <a href="#" class="menu-item" data-screen="history">
-    <div class="bg-white shadow rounded-lg hover:shadow-md transition-shadow">
-      <div class="px-4 py-5 sm:p-6">
-        <div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full mb-4">
-          <i class="ri-history-line text-blue-600 text-xl"></i>
-        </div>
-        <h3 class="text-lg font-semibold text-gray-900">History</h3>
-        <p class="text-sm text-gray-500">Patient medical history records</p>
+    <div class="bg-white shadow rounded-lg hover:shadow-md transition-shadow p-6">
+      <div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full mb-4">
+        <i class="ri-history-line text-blue-600 text-xl"></i>
       </div>
+      <h3 class="text-lg font-semibold text-gray-900">History</h3>
+      <p class="text-sm text-gray-500">Patient medical history records</p>
     </div>
   </a>
 
-  <!-- Assessment -->
+  <!-- 4. Assessment -->
   <a href="#" class="menu-item" data-screen="assessment">
-    <div class="bg-white shadow rounded-lg hover:shadow-md transition-shadow">
-      <div class="px-4 py-5 sm:p-6">
-        <div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full mb-4">
-          <i class="ri-stethoscope-line text-blue-600 text-xl"></i>
-        </div>
-        <h3 class="text-lg font-semibold text-gray-900">Assessment</h3>
-        <p class="text-sm text-gray-500">Record patient vital signs and assessments</p>
+    <div class="bg-white shadow rounded-lg hover:shadow-md transition-shadow p-6">
+      <div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full mb-4">
+        <i class="ri-stethoscope-line text-blue-600 text-xl"></i>
       </div>
+      <h3 class="text-lg font-semibold text-gray-900">Assessment</h3>
+      <p class="text-sm text-gray-500">Record patient vital signs and assessments</p>
     </div>
   </a>
 
-  <!-- Procedures -->
+  <!-- 5. Procedures -->
   <a href="#" class="menu-item" data-screen="procedures">
-    <div class="bg-white shadow rounded-lg hover:shadow-md transition-shadow">
-      <div class="px-4 py-5 sm:p-6">
-        <div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full mb-4">
-          <i class="ri-surgical-mask-line text-blue-600 text-xl"></i>
-        </div>
-        <h3 class="text-lg font-semibold text-gray-900">Procedures</h3>
-        <p class="text-sm text-gray-500">Document medical procedures</p>
+    <div class="bg-white shadow rounded-lg hover:shadow-md transition-shadow p-6">
+      <div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full mb-4">
+        <i class="ri-surgical-mask-line text-blue-600 text-xl"></i>
       </div>
+      <h3 class="text-lg font-semibold text-gray-900">Procedures</h3>
+      <p class="text-sm text-gray-500">Document medical procedures</p>
     </div>
   </a>
 
-  <!-- Laboratory Tests -->
+  <!-- 6. Laboratory Tests -->
   <a href="#" class="menu-item" data-screen="labTests">
-    <div class="bg-white shadow rounded-lg hover:shadow-md transition-shadow">
-      <div class="px-4 py-5 sm:p-6">
-        <div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full mb-4">
-          <i class="ri-test-tube-line text-blue-600 text-xl"></i>
-        </div>
-        <h3 class="text-lg font-semibold text-gray-900">Laboratory Tests</h3>
-        <p class="text-sm text-gray-500">Manage lab and diagnostic tests</p>
+    <div class="bg-white shadow rounded-lg hover:shadow-md transition-shadow p-6">
+      <div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full mb-4">
+        <i class="ri-test-tube-line text-blue-600 text-xl"></i>
       </div>
+      <h3 class="text-lg font-semibold text-gray-900">Laboratory Tests</h3>
+      <p class="text-sm text-gray-500">Manage lab and diagnostic tests</p>
     </div>
   </a>
 
-  <!-- Diet -->
+  <!-- 7. Diet -->
   <a href="#" class="menu-item" data-screen="diet">
-    <div class="bg-white shadow rounded-lg hover:shadow-md transition-shadow">
-      <div class="px-4 py-5 sm:p-6">
-        <div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full mb-4">
-          <i class="ri-restaurant-line text-blue-600 text-xl"></i>
-        </div>
-        <h3 class="text-lg font-semibold text-gray-900">Diet</h3>
-        <p class="text-sm text-gray-500">Manage patient dietary requirements</p>
+    <div class="bg-white shadow rounded-lg hover:shadow-md transition-shadow p-6">
+      <div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full mb-4">
+        <i class="ri-restaurant-line text-blue-600 text-xl"></i>
       </div>
-    </div>
-  </a>
-  <div></div>
-  <!-- Doctor's Orders -->
-  <a href="#" class="menu-item" data-screen="doctorsOrders">
-    <div class="bg-white shadow rounded-lg hover:shadow-md transition-shadow">
-      <div class="px-4 py-5 sm:p-6">
-        <div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full mb-4">
-          <i class="ri-file-list-3-line text-blue-600 text-xl"></i>
-        </div>
-        <h3 class="text-lg font-semibold text-gray-900">Doctor's Orders</h3>
-        <p class="text-sm text-gray-500">View and manage doctor's orders</p>
-      </div>
+      <h3 class="text-lg font-semibold text-gray-900">Diet</h3>
+      <p class="text-sm text-gray-500">Manage patient dietary requirements</p>
     </div>
   </a>
 
-  <!-- Logout -->
-  <a href="#" id="logoutBtn" class="menu-item" data-screen="logout">
-    <div class="bg-white border border-red-300 shadow rounded-lg hover:shadow-md transition-shadow p-4">
-      <div class="w-10 h-10 flex items-center justify-center bg-red-100 rounded-full mb-2">
-        <i class="ri-logout-box-line text-red-500 text-lg"></i>
+  <!-- 8. Doctor's Orders -->
+  <a href="#" class="menu-item" data-screen="doctorsOrders">
+    <div class="bg-white shadow rounded-lg hover:shadow-md transition-shadow p-6">
+      <div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full mb-4">
+        <i class="ri-file-list-3-line text-blue-600 text-xl"></i>
       </div>
-      <h3 class="text-base font-medium text-gray-900">Logout</h3>
-      <p class="text-xs text-gray-500">Exit the system</p>
+      <h3 class="text-lg font-semibold text-gray-900">Doctor's Orders</h3>
+      <p class="text-sm text-gray-500">View and manage doctor's orders</p>
     </div>
   </a>
+
+  <!-- 9. Logout -->
+  <a href="#" id="logoutBtn" class="menu-item" data-screen="logout">
+    <div class="bg-white border border-red-300 shadow rounded-lg hover:shadow-md transition-shadow p-6">
+      <div class="w-12 h-12 flex items-center justify-center bg-red-100 rounded-full mb-4">
+        <i class="ri-logout-box-line text-red-500 text-xl"></i>
+      </div>
+      <h3 class="text-lg font-semibold text-gray-900">Logout</h3>
+      <p class="text-sm text-gray-500">Exit the system</p>
+    </div>
+  </a>
+
+</div>
+</section>
+
+<div id="addPatient" class="hidden min-h-screen bg-gray-50">
+  <header class="bg-gradient-to-r from-blue-600 to-blue-700 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <button class="back-btn mr-2 p-2 rounded-full hover:bg-gray-100">
+            <i class="ri-arrow-left-line text-gray-100"></i>
+          </button>
+          <h1 class="text-lg font-medium text-white">Add New Patient</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+    <div class="px-4 py-6 sm:px-0">
+      <div class="bg-white shadow rounded-lg">
+        <div class="px-4 py-5 sm:p-6">
+          <form>
+            <div class="grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
+              <div class="sm:col-span-3">
+                <label for="patientId" class="block text-sm font-medium text-gray-700">Patient ID</label>
+                <input type="text" id="patientId" class="form-input">
+              </div>
+              <div class="sm:col-span-3">
+                <label for="admissionDate" class="block text-sm font-medium text-gray-700">Admission Date</label>
+                <input type="date" id="admissionDate" class="form-input">
+              </div>
+              <div class="sm:col-span-3">
+                <label for="firstName" class="block text-sm font-medium text-gray-700">First Name</label>
+                <input type="text" id="firstName" class="form-input">
+              </div>
+              <div class="sm:col-span-3">
+                <label for="lastName" class="block text-sm font-medium text-gray-700">Last Name</label>
+                <input type="text" id="lastName" class="form-input">
+              </div>
+              <div class="sm:col-span-2">
+                <label for="age" class="block text-sm font-medium text-gray-700">Age</label>
+                <input type="number" id="age" class="form-input">
+              </div>
+              <div class="sm:col-span-2">
+                <label for="gender" class="block text-sm font-medium text-gray-700">Gender</label>
+                <div class="relative">
+                  <select id="gender" class="form-input pr-8 appearance-none">
+                    <option value="" selected disabled>Select</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                  </select>
+                  <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                    <i class="ri-arrow-down-s-line"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="sm:col-span-2">
+                <label for="roomBed" class="block text-sm font-medium text-gray-700">Room/Bed</label>
+                <input type="text" id="roomBed" class="form-input">
+              </div>
+              <div class="sm:col-span-6">
+                <label for="address" class="block text-sm font-medium text-gray-700">Address</label>
+                <input type="text" id="address" class="form-input">
+              </div>
+              <div class="sm:col-span-3">
+                <label for="contactNumber" class="block text-sm font-medium text-gray-700">Contact Number</label>
+                <input type="tel" id="contactNumber" class="form-input">
+              </div>
+              <div class="sm:col-span-3">
+                <label for="emergencyContact" class="block text-sm font-medium text-gray-700">Emergency Contact</label>
+                <input type="tel" id="emergencyContact" class="form-input">
+              </div>
+            </div>
+            <div class="mt-6 flex justify-end space-x-3">
+              <button type="button" class="back-btn inline-flex items-center px-4 py-2 border border-gray-300 !rounded-button shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
+                Back
+              </button>
+              <button type="submit" class="inline-flex items-center px-4 py-2 border border-transparent !rounded-button shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700">
+                Save
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
 
 </main>
 </div>
@@ -1249,21 +1334,22 @@ Back
 </div>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-const loginForm = document.getElementById('loginForm');
-const mainMenu = document.getElementById('mainMenu');
-const logoutBtn = document.getElementById('logoutBtn');
-const menuItems = document.querySelectorAll('.menu-item');
-const backBtns = document.querySelectorAll('.back-btn');
+  const loginForm = document.getElementById('loginForm');
+  const mainMenu = document.getElementById('mainMenu');
+  const logoutBtn = document.getElementById('logoutBtn');
+  const menuItems = document.querySelectorAll('.menu-item');
+  const backBtns = document.querySelectorAll('.back-btn');
 const screens = {
-patientData: document.getElementById('patientData'),
-history: document.getElementById('history'),
-assessment: document.getElementById('assessment'),
-diagnosis: document.getElementById('diagnosis'),
-procedures: document.getElementById('procedures'),
-labTests: document.getElementById('labTests'),
-diet: document.getElementById('diet'),
-doctorsOrders: document.getElementById('doctorsOrders')
-};
+    patientData: document.getElementById('patientData'),
+    history: document.getElementById('history'),
+    assessment: document.getElementById('assessment'),
+    diagnosis: document.getElementById('diagnosis'),
+    procedures: document.getElementById('procedures'),
+    labTests: document.getElementById('labTests'),
+    diet: document.getElementById('diet'),
+    doctorsOrders: document.getElementById('doctorsOrders'),
+    addPatient: document.getElementById('addPatient')
+    };
 // Custom range input styling
 const painLevel = document.getElementById('painLevel');
 if (painLevel) {
@@ -1310,10 +1396,10 @@ customCheckbox.innerHTML = '<svg class="w-4 h-4 text-white" fill="none" stroke="
 });
 // Login form submission
 loginForm.addEventListener('submit', function(e) {
-e.preventDefault();
-document.querySelector('.flex.items-center.justify-center.min-h-screen').classList.add('hidden');
-mainMenu.classList.remove('hidden');
-});
+    e.preventDefault();
+    document.querySelector('.flex.items-center.justify-center.min-h-screen').classList.add('hidden');
+    mainMenu.classList.remove('hidden');
+  });
 // Logout button
 logoutBtn.addEventListener('click', function(e) {
 e.preventDefault();
@@ -1324,16 +1410,34 @@ loginForm.reset();
 });
 // Menu item navigation
 menuItems.forEach(item => {
-item.addEventListener('click', function(e) {
-e.preventDefault();
-const screenId = this.getAttribute('data-screen');
-mainMenu.classList.add('hidden');
-screens[screenId].classList.remove('hidden');
+    item.addEventListener('click', function(e) {
+      e.preventDefault();
+      const screenId = this.getAttribute('data-screen');
+      
+      // Hide all screens including main menu
+      mainMenu.classList.add('hidden');
+      Object.values(screens).forEach(screen => {
+        if (screen) screen.classList.add('hidden');
+      });
+      
+      // Show the selected screen
+      if (screens[screenId]) {
+        screens[screenId].classList.remove('hidden');
+      } else {
+        // Fallback to main menu if screen not found
+        mainMenu.classList.remove('hidden');
+      }
 });
 });
 // Back buttons
 backBtns.forEach(btn => {
-btn.addEventListener('click', function() {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      // Hide all screens
+      Object.values(screens).forEach(screen => {
+        if (screen) screen.classList.add('hidden');
+      });
+
 // Hide all screens
 Object.values(screens).forEach(screen => {
 screen.classList.add('hidden');

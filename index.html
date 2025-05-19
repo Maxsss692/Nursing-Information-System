@@ -125,74 +125,65 @@ Having trouble logging in? <a href="#" class="text-primary hover:underline">Cont
 </div>
 </div>
 <div id="mainMenu" class="hidden min-h-screen bg-gray-50">
-<header class="bg-gradient-to-r from-blue-600 to-blue-700 shadow-lg">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flex justify-between h-16">
-<div class="flex items-center">
-<div class="flex-shrink-0 flex items-center">
-<div class="w-10 h-10 flex items-center justify-center bg-white rounded-lg shadow-md">
-<i class="ri-hospital-line text-primary text-xl"></i>
-</div>
-<span class="ml-3 text-xl font-semibold text-white">GASTRO ASSET</span>
-</div>
-</div>
-<div class="flex items-center space-x-4">
-<div class="flex items-center text-white">
-    <div class="flex items-center text-white">
-        <i class="ri-time-line mr-2"></i>
-        <span class="text-sm" id="currentTime"></span>
+  <header class="bg-gradient-to-r from-blue-600 to-blue-700 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <div class="flex-shrink-0 flex items-center">
+            <div class="w-10 h-10 flex items-center justify-center bg-white rounded-lg shadow-md">
+              <i class="ri-hospital-line text-primary text-xl"></i>
+            </div>
+            <span class="ml-3 text-xl font-semibold text-white">GASTRO ASSET</span>
+          </div>
+        </div>
+        <div class="flex items-center space-x-4">
+          <div class="flex items-center text-white">
+            <i class="ri-time-line mr-2"></i>
+            <span class="text-sm" id="currentTime"></span>
+          </div>
+          <div class="h-6 w-px bg-blue-400"></div>
+          <div class="flex items-center">
+            <span class="text-sm text-blue-100">Nurse: </span>
+            <span class="ml-1 text-sm font-medium text-white">Nurse1, RN</span>
+            <div class="w-8 h-8 flex items-center justify-center bg-white/10 rounded-full ml-2">
+              <i class="ri-user-line text-white"></i>
+            </div>
+          </div>
+        </div>
       </div>
+    </div>
+  </header>
+  <script>
+    // Function to update the current time in 12-hour format with AM/PM
+    function updateCurrentTime() {
+      const now = new Date();
       
-     <script>
-  // Function to update the current time in 12-hour format with AM/PM
-  function updateCurrentTime() {
-    const now = new Date();
+      // Get current hour (0-23)
+      let hours = now.getHours();
+      const minutes = now.getMinutes().toString().padStart(2, '0');
+      const seconds = now.getSeconds().toString().padStart(2, '0');
+      
+      // Determine AM or PM
+      const period = hours >= 12 ? 'PM' : 'AM';
+      
+      // Convert hour to 12-hour format
+      hours = hours % 12;
+      hours = hours ? hours : 12; // Handle 0 as 12 (midnight)
+      
+      // Combine hour, minutes, seconds, and AM/PM into a time string
+      const timeString = `${hours.toString().padStart(2, '0')}:${minutes}:${seconds} ${period}`;
+      
+      // Update the 'currentTime' element with the formatted time
+      document.getElementById('currentTime').textContent = timeString;
+    }
     
-    // Get current hour (0-23)
-    let hours = now.getHours();
-    const minutes = now.getMinutes().toString().padStart(2, '0');
-    const seconds = now.getSeconds().toString().padStart(2, '0');
+    // Set the time to update every second (1000 milliseconds)
+    setInterval(updateCurrentTime, 1000);
     
-    // Determine AM or PM
-    const period = hours >= 12 ? 'PM' : 'AM';
-    
-    // Convert hour to 12-hour format
-    hours = hours % 12;
-    hours = hours ? hours : 12; // Handle 0 as 12 (midnight)
-    
-    // Combine hour, minutes, seconds, and AM/PM into a time string
-    const timeString = `${hours.toString().padStart(2, '0')}:${minutes}:${seconds} ${period}`;
-    
-    // Update the 'currentTime' element with the formatted time
-    document.getElementById('currentTime').textContent = timeString;
-  }
-  
-  // Set the time to update every second (1000 milliseconds)
-  setInterval(updateCurrentTime, 1000);
-  
-  // Initial call to set the time immediately
-  updateCurrentTime();
-</script>
+    // Initial call to set the time immediately
+    updateCurrentTime();
+  </script>
 
-</div>
-<div class="h-6 w-px bg-blue-400"></div>
-<div class="absolute right-0 flex items-center pr-4">
-  <!-- Container for Nurse Name and Time -->
-  <div class="flex items-center">
-    <span class="text-sm text-blue-100">Nurse: </span>
-    <span class="ml-1 text-sm font-medium text-white">Nurse1, RN</span>
-    <span class="ml-2 text-sm font-medium text-white" id="currentTime"></span> <!-- Time placed here -->
-  </div>
-  <div class="w-8 h-8 flex items-center justify-center bg-white/10 rounded-full ml-2">
-    <i class="ri-user-line text-white"></i>
-  </div>
-</div>
-</div>
-<div class="flex items-center">
-</div>
-</div>
-</div>
-</header>
 <section class="mx-auto max-w-7xl px-6 py-10">
   <h1 class="text-2xl font-semibold mb-6">Main Menu</h1>
 

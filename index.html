@@ -196,10 +196,11 @@ Having trouble logging in? <a href="#" class="text-primary hover:underline">Cont
 <section class="mx-auto max-w-7xl px-6 py-10">
   <h1 class="text-2xl font-semibold mb-6">Main Menu</h1>
 
-  <!-- addPatient -->
+  <!-- Grid of menu items -->
 <div class="grid grid-cols-3 gap-6">
-       <!-- addPatient -->
-      <a href="#" class="menu-item" data-screen="addPatient">
+
+   <!-- 2. Add Patient -->
+   <a href="#" class="menu-item" data-screen="addPatient">
     <div class="bg-white shadow rounded-lg hover:shadow-md transition-shadow p-6">
       <div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full mb-4">
         <i class="ri-user-add-line text-blue-600 text-xl"></i>
@@ -208,6 +209,8 @@ Having trouble logging in? <a href="#" class="text-primary hover:underline">Cont
       <p class="text-sm text-gray-500">Add new patient information</p>
     </div>
   </a>
+
+  
    <!-- 1. Patient's Data -->
    <a href="#" class="menu-item" data-screen="patientData">
     <div class="bg-white shadow rounded-lg hover:shadow-md transition-shadow p-6">
@@ -218,7 +221,6 @@ Having trouble logging in? <a href="#" class="text-primary hover:underline">Cont
       <p class="text-sm text-gray-500">View and manage patient information</p>
     </div>
   </a>
-
   <!-- 3. History -->
   <a href="#" class="menu-item" data-screen="history">
     <div class="bg-white shadow rounded-lg hover:shadow-md transition-shadow p-6">
@@ -299,90 +301,115 @@ Having trouble logging in? <a href="#" class="text-primary hover:underline">Cont
 </div>
 </section>
 
-<div id="addPatient" class="hidden min-h-screen bg-gray-50">
-  <header class="bg-gradient-to-r from-blue-600 to-blue-700 shadow-lg">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between h-16">
-        <div class="flex items-center">
-          <button class="back-btn mr-2 p-2 rounded-full hover:bg-gray-100">
-            <i class="ri-arrow-left-line text-gray-100"></i>
-          </button>
-          <h1 class="text-lg font-medium text-white">Add New Patient</h1>
-        </div>
-      </div>
-    </div>
-  </header>
-  <main class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-    <div class="px-4 py-6 sm:px-0">
-      <div class="bg-white shadow rounded-lg">
-        <div class="px-4 py-5 sm:p-6">
-          <form>
-            <div class="grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
-              <div class="sm:col-span-3">
-                <label for="patientId" class="block text-sm font-medium text-gray-700">Patient ID</label>
-                <input type="text" id="patientId" class="form-input">
-              </div>
-              <div class="sm:col-span-3">
-                <label for="admissionDate" class="block text-sm font-medium text-gray-700">Admission Date</label>
-                <input type="date" id="admissionDate" class="form-input">
-              </div>
-              <div class="sm:col-span-3">
-                <label for="firstName" class="block text-sm font-medium text-gray-700">First Name</label>
-                <input type="text" id="firstName" class="form-input">
-              </div>
-              <div class="sm:col-span-3">
-                <label for="lastName" class="block text-sm font-medium text-gray-700">Last Name</label>
-                <input type="text" id="lastName" class="form-input">
-              </div>
-              <div class="sm:col-span-2">
-                <label for="age" class="block text-sm font-medium text-gray-700">Age</label>
-                <input type="number" id="age" class="form-input">
-              </div>
-              <div class="sm:col-span-2">
-                <label for="gender" class="block text-sm font-medium text-gray-700">Gender</label>
-                <div class="relative">
-                  <select id="gender" class="form-input pr-8 appearance-none">
-                    <option value="" selected disabled>Select</option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                    <option value="other">Other</option>
-                  </select>
-                  <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                    <i class="ri-arrow-down-s-line"></i>
-                  </div>
-                </div>
-              </div>
-              <div class="sm:col-span-2">
-                <label for="roomBed" class="block text-sm font-medium text-gray-700">Room/Bed</label>
-                <input type="text" id="roomBed" class="form-input">
-              </div>
-              <div class="sm:col-span-6">
-                <label for="address" class="block text-sm font-medium text-gray-700">Address</label>
-                <input type="text" id="address" class="form-input">
-              </div>
-              <div class="sm:col-span-3">
-                <label for="contactNumber" class="block text-sm font-medium text-gray-700">Contact Number</label>
-                <input type="tel" id="contactNumber" class="form-input">
-              </div>
-              <div class="sm:col-span-3">
-                <label for="emergencyContact" class="block text-sm font-medium text-gray-700">Emergency Contact</label>
-                <input type="tel" id="emergencyContact" class="form-input">
-              </div>
-            </div>
-            <div class="mt-6 flex justify-end space-x-3">
-              <button type="button" class="back-btn inline-flex items-center px-4 py-2 border border-gray-300 !rounded-button shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
-                Back
-              </button>
-              <button type="submit" class="inline-flex items-center px-4 py-2 border border-transparent !rounded-button shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700">
-                Save
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </main>
+</main>
 </div>
+<div id="addPatient" class="hidden min-h-screen bg-gray-50">
+<header class="bg-gradient-to-r from-blue-600 to-blue-700 shadow-lg">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between h-16">
+<div class="flex items-center">
+<button class="back-btn mr-2 p-2 rounded-full hover:bg-gray-100">
+<i class="ri-arrow-left-line text-gray-500"></i>
+</button>
+<h1 class="text-lg font-medium text-gray-900">Add New Patient</h1>
+</div>
+<div class="flex items-center">
+<span class="text-sm text-gray-500">Current Patient: </span>
+<span class="ml-1 text-sm font-medium text-gray-700">New Patient</span>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+<div class="px-4 py-6 sm:px-0">
+<div class="bg-white shadow rounded-lg">
+<div class="px-4 py-5 sm:p-6">
+<form>
+<div class="grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
+<div class="sm:col-span-3">
+<label for="patientId" class="block text-sm font-medium text-gray-700">Patient ID</label>
+<div class="mt-1">
+<input type="text" id="patientId" class="form-input" value="" placeholder="Auto-generated">
+</div>
+</div>
+<div class="sm:col-span-3">
+<label for="admissionDate" class="block text-sm font-medium text-gray-700">Admission Date</label>
+<div class="mt-1">
+<input type="date" id="admissionDate" class="form-input" value="">
+</div>
+</div>
+<div class="sm:col-span-3">
+<label for="firstName" class="block text-sm font-medium text-gray-700">First Name</label>
+<div class="mt-1">
+<input type="text" id="firstName" class="form-input" value="" placeholder="Enter first name">
+</div>
+</div>
+<div class="sm:col-span-3">
+<label for="lastName" class="block text-sm font-medium text-gray-700">Last Name</label>
+<div class="mt-1">
+<input type="text" id="lastName" class="form-input" value="" placeholder="Enter last name">
+</div>
+</div>
+<div class="sm:col-span-2">
+<label for="age" class="block text-sm font-medium text-gray-700">Age</label>
+<div class="mt-1">
+<input type="number" id="age" class="form-input" value="" placeholder="Enter age">
+</div>
+</div>
+<div class="sm:col-span-2">
+<label for="gender" class="block text-sm font-medium text-gray-700">Gender</label>
+<div class="mt-1">
+<div class="relative">
+<select id="gender" class="form-input pr-8 appearance-none">
+<option value="" disabled selected>Select gender</option>
+<option value="male">Male</option>
+<option value="female">Female</option>
+<option value="other">Other</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+<i class="ri-arrow-down-s-line"></i>
+</div>
+</div>
+</div>
+</div>
+<div class="sm:col-span-2">
+<label for="roomBed" class="block text-sm font-medium text-gray-700">Room/Bed</label>
+<div class="mt-1">
+<input type="text" id="roomBed" class="form-input" value="" placeholder="Enter room/bed">
+</div>
+</div>
+<div class="sm:col-span-6">
+<label for="address" class="block text-sm font-medium text-gray-700">Address</label>
+<div class="mt-1">
+<input type="text" id="address" class="form-input" value="" placeholder="Enter full address">
+</div>
+</div>
+<div class="sm:col-span-3">
+<label for="contactNumber" class="block text-sm font-medium text-gray-700">Contact Number</label>
+<div class="mt-1">
+<input type="tel" id="contactNumber" class="form-input" value="" placeholder="Enter phone number">
+</div>
+</div>
+<div class="sm:col-span-3">
+<label for="emergencyContact" class="block text-sm font-medium text-gray-700">Emergency Contact</label>
+<div class="mt-1">
+<input type="tel" id="emergencyContact" class="form-input" value="" placeholder="Enter emergency contact">
+</div>
+</div>
+</div>
+<div class="mt-6 flex justify-end space-x-3">
+<button type="button" class="back-btn inline-flex items-center px-4 py-2 border border-gray-300 !rounded-button shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary whitespace-nowrap">
+Cancel
+</button>
+<button id="saveButton" type="submit" class="inline-flex items-center px-4 py-2 border border-transparent !rounded-button shadow-sm text-sm font-medium text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary whitespace-nowrap">
+Add Patient
+</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</main>
 
 </main>
 </div>
@@ -495,6 +522,7 @@ Save
 </div>
 </div>
 </main>
+
 </div>
 <div id="history" class="hidden min-h-screen bg-gray-50">
 <header class="bg-gradient-to-r from-blue-600 to-blue-700 shadow-lg">
@@ -751,7 +779,6 @@ Save
 </select>
 <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
 <i class="ri-arrow-down-s-line"></i>
-</div>
 </div>
 </div>
 </div>
@@ -1337,7 +1364,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const logoutBtn = document.getElementById('logoutBtn');
   const menuItems = document.querySelectorAll('.menu-item');
   const backBtns = document.querySelectorAll('.back-btn');
-const screens = {
+  const screens = {
     patientData: document.getElementById('patientData'),
     history: document.getElementById('history'),
     assessment: document.getElementById('assessment'),
@@ -1346,78 +1373,36 @@ const screens = {
     labTests: document.getElementById('labTests'),
     diet: document.getElementById('diet'),
     doctorsOrders: document.getElementById('doctorsOrders'),
-    addPatient: document.getElementById('addPatient')
-    };
-// Custom range input styling
-const painLevel = document.getElementById('painLevel');
-if (painLevel) {
-painLevel.addEventListener('input', function() {
-const value = this.value;
-this.style.background = `linear-gradient(to right, #4F46E5 0%, #4F46E5 ${value * 10}%, #e5e7eb ${value * 10}%, #e5e7eb 100%)`;
-});
-// Initialize the range slider
-const initValue = painLevel.value;
-painLevel.style.background = `linear-gradient(to right, #4F46E5 0%, #4F46E5 ${initValue * 10}%, #e5e7eb ${initValue * 10}%, #e5e7eb 100%)`;
-}
-// Custom checkbox styling
-const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-checkboxes.forEach(checkbox => {
-const wrapper = document.createElement('div');
-wrapper.className = 'relative';
-const customCheckbox = document.createElement('div');
-customCheckbox.className = 'w-4 h-4 border border-gray-300 rounded bg-white';
-checkbox.parentNode.insertBefore(wrapper, checkbox);
-wrapper.appendChild(checkbox);
-wrapper.appendChild(customCheckbox);
-checkbox.style.opacity = '0';
-checkbox.style.position = 'absolute';
-checkbox.style.left = '0';
-checkbox.style.top = '0';
-checkbox.style.width = '100%';
-checkbox.style.height = '100%';
-checkbox.style.zIndex = '1';
-checkbox.style.cursor = 'pointer';
-checkbox.addEventListener('change', function() {
-if (this.checked) {
-customCheckbox.classList.add('bg-primary');
-customCheckbox.innerHTML = '<svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>';
-} else {
-customCheckbox.classList.remove('bg-primary');
-customCheckbox.innerHTML = '';
-}
-});
-// Initialize the checkbox
-if (checkbox.checked) {
-customCheckbox.classList.add('bg-primary');
-customCheckbox.innerHTML = '<svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>';
-}
-});
-// Login form submission
-loginForm.addEventListener('submit', function(e) {
+    addPatient: document.getElementById('addPatient') // Ensure this matches the "Add Patient" screen ID
+  };
+
+  // Login form submission
+  loginForm.addEventListener('submit', function(e) {
     e.preventDefault();
     document.querySelector('.flex.items-center.justify-center.min-h-screen').classList.add('hidden');
     mainMenu.classList.remove('hidden');
   });
-// Logout button
-logoutBtn.addEventListener('click', function(e) {
-e.preventDefault();
-mainMenu.classList.add('hidden');
-document.querySelector('.flex.items-center.justify-center.min-h-screen').classList.remove('hidden');
-// Reset form
-loginForm.reset();
-});
-// Menu item navigation
-menuItems.forEach(item => {
+
+  // Logout button
+  logoutBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    mainMenu.classList.add('hidden');
+    document.querySelector('.flex.items-center.justify-center.min-h-screen').classList.remove('hidden');
+    loginForm.reset();
+  });
+
+  // Menu item navigation
+  menuItems.forEach(item => {
     item.addEventListener('click', function(e) {
       e.preventDefault();
       const screenId = this.getAttribute('data-screen');
-      
+
       // Hide all screens including main menu
       mainMenu.classList.add('hidden');
       Object.values(screens).forEach(screen => {
         if (screen) screen.classList.add('hidden');
       });
-      
+
       // Show the selected screen
       if (screens[screenId]) {
         screens[screenId].classList.remove('hidden');
@@ -1425,10 +1410,11 @@ menuItems.forEach(item => {
         // Fallback to main menu if screen not found
         mainMenu.classList.remove('hidden');
       }
-});
-});
-// Back buttons
-backBtns.forEach(btn => {
+    });
+  });
+
+  // Back buttons
+  backBtns.forEach(btn => {
     btn.addEventListener('click', function(e) {
       e.preventDefault();
       // Hide all screens
@@ -1436,29 +1422,10 @@ backBtns.forEach(btn => {
         if (screen) screen.classList.add('hidden');
       });
 
-// Hide all screens
-Object.values(screens).forEach(screen => {
-screen.classList.add('hidden');
-});
-// Show main menu
-mainMenu.classList.remove('hidden');
-});
-});
-
-// Select specific buttons by their unique IDs or attributes
-const refreshButtons = document.querySelectorAll(
-  'button#saveButton, button#addOrderButton, button#requestTestButton, button#addProcedureButton'
-);
-
-// Add click event listeners to the selected buttons
-refreshButtons.forEach(button => {
-  button.addEventListener('click', function(e) {
-    e.preventDefault(); // Prevent default form submission
-    location.reload(); // Refresh the page
+      // Show main menu
+      mainMenu.classList.remove('hidden');
+    });
   });
-});
-
-// Other existing script logic...
 });
 </script>
 </body>

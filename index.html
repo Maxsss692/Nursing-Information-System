@@ -1349,75 +1349,75 @@ Back
 </main>
 </div>
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  const loginForm = document.getElementById('loginForm');
-  const mainMenu = document.getElementById('mainMenu');
-  const logoutBtn = document.getElementById('logoutBtn');
-  const menuItems = document.querySelectorAll('.menu-item');
-  const backBtns = document.querySelectorAll('.back-btn');
-  const screens = {
-    patientData: document.getElementById('patientData'),
-    history: document.getElementById('history'),
-    assessment: document.getElementById('assessment'),
-    diagnosis: document.getElementById('diagnosis'),
-    procedures: document.getElementById('procedures'),
-    labTests: document.getElementById('labTests'),
-    diet: document.getElementById('diet'),
-    doctorsOrders: document.getElementById('doctorsOrders'),
-    addPatient: document.getElementById('addPatient') // Ensure this matches the "Add Patient" screen ID
-  };
-
-  // Login form submission
-  loginForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    document.querySelector('.flex.items-center.justify-center.min-h-screen').classList.add('hidden');
-    mainMenu.classList.remove('hidden');
-  });
-
-  // Logout button
-  logoutBtn.addEventListener('click', function(e) {
-    e.preventDefault();
-    mainMenu.classList.add('hidden');
-    document.querySelector('.flex.items-center.justify-center.min-h-screen').classList.remove('hidden');
-    loginForm.reset();
-  });
-
-  // Menu item navigation
-  menuItems.forEach(item => {
-    item.addEventListener('click', function(e) {
+  document.addEventListener('DOMContentLoaded', function() {
+    const loginForm = document.getElementById('loginForm');
+    const mainMenu = document.getElementById('mainMenu');
+    const logoutBtn = document.getElementById('logoutBtn');
+    const menuItems = document.querySelectorAll('.menu-item');
+    const backBtns = document.querySelectorAll('.back-btn');
+  
+    const screens = {
+      patientData: document.getElementById('patientData'),
+      history: document.getElementById('history'),
+      assessment: document.getElementById('assessment'),
+      diagnosis: document.getElementById('diagnosis'),
+      procedures: document.getElementById('procedures'),
+      labTests: document.getElementById('labTests'),
+      diet: document.getElementById('diet'),
+      doctorsOrders: document.getElementById('doctorsOrders'),
+      addPatient: document.getElementById('addPatient')
+    };
+  
+    loginForm.addEventListener('submit', function(e) {
       e.preventDefault();
-      const screenId = this.getAttribute('data-screen');
-
-      // Hide all screens including main menu
+      document.querySelector('.flex.items-center.justify-center.min-h-screen').classList.add('hidden');
+      mainMenu.classList.remove('hidden');
+    });
+  
+    logoutBtn.addEventListener('click', function(e) {
+      e.preventDefault();
       mainMenu.classList.add('hidden');
-      Object.values(screens).forEach(screen => {
-        if (screen) screen.classList.add('hidden');
+      document.querySelector('.flex.items-center.justify-center.min-h-screen').classList.remove('hidden');
+      loginForm.reset();
+    });
+  
+    menuItems.forEach(item => {
+      item.addEventListener('click', function(e) {
+        e.preventDefault();
+        const screenId = this.getAttribute('data-screen');
+        Object.values(screens).forEach(screen => screen?.classList.add('hidden'));
+        screens[screenId]?.classList.remove('hidden');
+        mainMenu.classList.add('hidden');
       });
-
-      // Show the selected screen
-      if (screens[screenId]) {
-        screens[screenId].classList.remove('hidden');
-      } else {
-        // Fallback to main menu if screen not found
+    });
+  
+    backBtns.forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        Object.values(screens).forEach(screen => screen?.classList.add('hidden'));
         mainMenu.classList.remove('hidden');
+      });
+    });
+  
+    const redirectButtons = [
+      'saveButton',
+      'addOrderButton',
+      'requestTestButton',
+      'addProcedureButton'
+    ];
+  
+    // Add additional save buttons by matching button text if needed
+    document.querySelectorAll('button').forEach(button => {
+      const text = button.textContent.trim().toLowerCase();
+      if (["save", "add procedure", "add patient", "request test", "add order"].includes(text)) {
+        button.addEventListener('click', function(e) {
+          e.preventDefault();
+          Object.values(screens).forEach(screen => screen?.classList.add('hidden'));
+          mainMenu.classList.remove('hidden');
+        });
       }
     });
   });
-
-  // Back buttons
-  backBtns.forEach(btn => {
-    btn.addEventListener('click', function(e) {
-      e.preventDefault();
-      // Hide all screens
-      Object.values(screens).forEach(screen => {
-        if (screen) screen.classList.add('hidden');
-      });
-
-      // Show main menu
-      mainMenu.classList.remove('hidden');
-    });
-  });
-});
-</script>
+  </script>
 </body>
 </html>

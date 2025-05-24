@@ -556,6 +556,12 @@ Save
 <textarea id="surgeries" rows="3" class="form-input py-3">No known drug allergies</textarea>
 </div>
 </div>
+<div>
+  <label for="presentIllness" class="block text-sm font-medium text-gray-700">History of Present Illness</label>
+  <div class="mt-1">
+    <textarea id="presentIllness" rows="3" class="form-input py-3" placeholder="Describe the history of present illness..."></textarea>
+  </div>
+</div>
 </div>
 <div class="mt-6 flex justify-end space-x-3">
 <button type="button" class="back-btn inline-flex items-center px-4 py-2 border border-gray-300 !rounded-button shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary whitespace-nowrap">
@@ -571,6 +577,7 @@ Save
 </div>
 </main>
 </div>
+
 <div id="assessment" class="hidden min-h-screen bg-gray-50">
 <header class="bg-gradient-to-r from-blue-600 to-blue-700 shadow-lg">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -626,6 +633,29 @@ Save
 <div class="mt-1">
 <textarea id="neurological" rows="2" class="form-input py-3">Dry mucous membranes, poor skin turgor</textarea>
 </div>
+</div>
+<h3 class="text-lg font-medium text-gray-900 mt-8">Vital Signs</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+  <div>
+    <label for="temperature" class="block text-sm font-medium text-gray-700">Temperature (°C)</label>
+    <input type="number" step="0.1" id="temperature" class="form-input mt-1">
+  </div>
+  <div>
+    <label for="pulseRate" class="block text-sm font-medium text-gray-700">Pulse Rate (bpm)</label>
+    <input type="number" id="pulseRate" class="form-input mt-1">
+  </div>
+  <div>
+    <label for="respiratoryRate" class="block text-sm font-medium text-gray-700">Respiratory Rate (breaths/min)</label>
+    <input type="number" id="respiratoryRate" class="form-input mt-1">
+  </div>
+  <div>
+    <label for="oxygenSaturation" class="block text-sm font-medium text-gray-700">Oxygen Saturation (%)</label>
+    <input type="number" id="oxygenSaturation" class="form-input mt-1">
+  </div>
+  <div>
+    <label for="bloodPressure" class="block text-sm font-medium text-gray-700">Blood Pressure (mmHg)</label>
+    <input type="text" id="bloodPressure" class="form-input mt-1" placeholder="e.g. 120/80">
+  </div>
 </div>
 </div>
 </div>
